@@ -5,7 +5,12 @@ require ('dotenv').config();
 app.set('port',process.env.PORT || 3000)
 const route=process.env.ROUTE;
 app.get('/',(req, res)=>{
-    res.send(route);
+
+    const data = {
+        name: route
+    };   
+    
+    res.send(data);
 })
 
 app.listen(process.env.PORT,()=>{
